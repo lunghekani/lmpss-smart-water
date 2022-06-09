@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Smart_Water_Dash.Models.Login>
+
+
+
+
+<body id="kt_body" class="#">
+    <!--begin::Main-->
+        
+    <!--begin::Login Sign in form-->
+
+                <div class="login-signin w-50 ">
+                    <div class="mb-20">
+                        <h3>Sign In To Admin</h3>
+                        <div class="text-muted font-weight-bold">Enter your details to login to your account:</div>
+                    </div>
+
+                    <form class="form" id="kt_login_signin_form">
+                        <div class="form-group mb-5">
+                            <input class="form-control h-auto form-control-solid py-3 px-6" type="text" placeholder="Email" name="username" autocomplete="off" />
+                        </div>
+
+                        <div class="form-group mb-5">
+                            <input class="form-control h-auto form-control-solid py-3 px-8" type="password" placeholder="Password" name="password" />
+                        </div>
+
+                        <div class="form-group d-flex flex-wrap justify-content-between align-items-center">
+                            <div class="checkbox-inline">
+                                <label class="checkbox m-0 text-muted">
+                                    <input type="checkbox" name="remember" />
+                                    <span></span>Remember me
+                                </label>
+                            </div>
+                            <a  asp-controller="FgPassword" asp-action="FgPassword" id="kt_login_forgot" class="text-muted text-hover-primary">Forget Password ?</a>
+                        </div>
+                        <button id="kt_login_signin_submit" class="btn btn-primary font-weight-bold ">Sign In</button>
+                    </form>
+                    <div class="mt-10">
+                        <span class="opacity-70 mr-4">Don't have an account yet?</span>
+                        <a asp-controller="Signup" asp-action="Signup" id="kt_login_signup"
+                           class="text-muted text-hover-primary font-weight-bold">Sign Up!</a>
+                    </div>
+                </div>
+
+               
+           
+        <!--end::Login-->
+   
+</body>
+
+
