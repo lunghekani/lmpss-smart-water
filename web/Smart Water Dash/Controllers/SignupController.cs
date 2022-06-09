@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-//using Smart_Water_Dash.Data;
+using Smart_Water_Dash.Data;
 using Smart_Water_Dash.Models;
 using System;
 using System.Collections.Generic;
@@ -10,9 +10,26 @@ namespace Smart_Water_Dash.Controllers
 {
     public class SignupController : Controller
     {
+        private readonly ApplicationDbContext _db;
+
+        public SignupController(ApplicationDbContext db)
+        {
+            _db = db;
+        }
         public IActionResult Signup()
         {
-            return View();
+            IEnumerable<Signup> objList = _db.Signup;
+            return View(objList);
+        }
+
+        //POST -signup
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Signup(Signup obj)
+        {
+            _db.Signup.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Login");
         }
     }
 }
