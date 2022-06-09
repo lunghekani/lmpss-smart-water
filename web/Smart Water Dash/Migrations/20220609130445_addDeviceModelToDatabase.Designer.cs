@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Smart_Water_Dash.Data;
 
@@ -10,9 +11,10 @@ using Smart_Water_Dash.Data;
 namespace Smart_Water_Dash.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220609130445_addDeviceModelToDatabase")]
+    partial class addDeviceModelToDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,6 +22,23 @@ namespace Smart_Water_Dash.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("Smart_Water_Dash.Models.DeviceModel", b =>
+                {
+                    b.Property<string>("deviceId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("userId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("userName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("deviceId");
+
+                    b.ToTable("Devices");
+                });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.Users", b =>
                 {
