@@ -1,6 +1,5 @@
 import {
   StyleSheet,
-  Text,
   View,
   FlatList,
   TouchableOpacity,
@@ -9,76 +8,97 @@ import {
 import React from "react";
 import Divider from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
+import { Block, Text } from "../../Components/Index";
+import * as theme from "../../theme";
+import mocks from "../../settings";
 
 export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <View style={styles.theSpot}>
-        <Text style={styles.headingText}>My Home</Text>
-        <View style={styles.iconsContainer}>
-          <View style={styles.parentChild}>
-            <TouchableOpacity style={styles.circleOpacity}>
-              <Ionicons color={"#219ebc"} name="water-outline" size={30} />
-            </TouchableOpacity>
-            <Text style={styles.btnText}>Water</Text>
-          </View>
-          <View style={styles.parentChild}>
-            <TouchableOpacity style={styles.circleElec}>
-              <Ionicons color={"#FFEF00"} name="flash-outline" size={30} />
-            </TouchableOpacity>
-            <Text style={styles.btnText}>Electricity</Text>
-          </View>
-          <View style={styles.parentChild}>
-            <TouchableOpacity style={styles.circleCharts}>
-              <Ionicons color={"red"} name="trending-up-outline" size={30} />
-            </TouchableOpacity>
-            <Text style={styles.btnText}>Charts</Text>
-          </View>
-          <View style={styles.parentChild}>
-            <TouchableOpacity style={styles.circleSettings}>
-              <Ionicons color={"grey"} name="settings-outline" size={30} />
-            </TouchableOpacity>
-            <Text style={styles.btnText}>Settings</Text>
-          </View>
-        </View>
-      </View>
-
-      <View style={styles.theLoft}>
-        <Text style={styles.headingText}>Other Features</Text>
-        <View style={styles.btnContainer}>
-          <TouchableOpacity style={styles.loftButtons}>
-            <Text>
-              Usage{" "}
-              <Ionicons
-                color={"grey"}
-                name="analytics-outline"
-                size={30}
-              ></Ionicons>
-            </Text>
+      <Block column>
+        <Text welcome>Hello</Text>
+        <Text name>John Doe</Text>
+      </Block>
+      <Block row style={{ paddingVertical: 10 }}>
+        <Block flex={1.5} row style={{ alignItems: "flex-end" }}>
+          <Text h1>34</Text>
+          <Text h1 size={34} height={80} weight="600" spacing={0.1}>
+            kL
+          </Text>
+        </Block>
+        <Block flex={1} column>
+          <Text caption>Usage</Text>
+        </Block>
+      </Block>
+      <Block column space="between">
+        <Block row space="around" style={{ marginVertical: theme.sizes.base }}>
+          <TouchableOpacity activeOpacity={0.8}>
+            <Block center middle style={styles.button}>
+              <TouchableOpacity style={styles.circleOpacity}>
+                <Ionicons color={"#219ebc"} name="water-outline" size={30} />
+              </TouchableOpacity>
+              <Text style={styles.btnText}>Water</Text>
+            </Block>
           </TouchableOpacity>
-
-          <TouchableOpacity style={styles.loftButtons}>
-            <Text>
-              Metering{" "}
-              <Ionicons
-                color={"grey"}
-                name="speedometer-outline"
-                size={30}
-              ></Ionicons>
-            </Text>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("Settings", { name: "light" })}
+          >
+            <Block center middle style={styles.button}>
+              <TouchableOpacity style={styles.circleOpacity}>
+                <Ionicons color={"#219ebc"} name="water-outline" size={30} />
+              </TouchableOpacity>
+              <Text style={styles.btnText}>Water</Text>
+            </Block>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.loftButtons}>
-            <Text>
-              More Options{" "}
-              <Ionicons
-                color={"grey"}
-                name="options-outline"
-                size={30}
-              ></Ionicons>
-            </Text>
+        </Block>
+      </Block>
+      <Block column space="between">
+        <Block row space="around" style={{ marginVertical: theme.sizes.base }}>
+          <TouchableOpacity activeOpacity={0.8}>
+            <Block center middle style={styles.button}>
+              <TouchableOpacity style={styles.circleOpacity}>
+                <Ionicons color={"#219ebc"} name="water-outline" size={30} />
+              </TouchableOpacity>
+              <Text style={styles.btnText}>Water</Text>
+            </Block>
           </TouchableOpacity>
-        </View>
-      </View>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("Settings", { name: "light" })}
+          >
+            <Block center middle style={styles.button}>
+              <TouchableOpacity style={styles.circleOpacity}>
+                <Ionicons color={"#219ebc"} name="water-outline" size={30} />
+              </TouchableOpacity>
+              <Text style={styles.btnText}>Water</Text>
+            </Block>
+          </TouchableOpacity>
+        </Block>
+      </Block>
+      <Block column space="between">
+        <Block row space="around" style={{ marginVertical: theme.sizes.base }}>
+          <TouchableOpacity activeOpacity={0.8}>
+            <Block center middle style={styles.button}>
+              <TouchableOpacity style={styles.circleOpacity}>
+                <Ionicons color={"#219ebc"} name="water-outline" size={30} />
+              </TouchableOpacity>
+              <Text style={styles.btnText}>Water</Text>
+            </Block>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("Settings", { name: "light" })}
+          >
+            <Block center middle style={styles.button}>
+              <TouchableOpacity style={styles.circleOpacity}>
+                <Ionicons color={"#219ebc"} name="water-outline" size={30} />
+              </TouchableOpacity>
+              <Text style={styles.btnText}>Water</Text>
+            </Block>
+          </TouchableOpacity>
+        </Block>
+      </Block>
     </SafeAreaView>
   );
 }
@@ -170,5 +190,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "30%",
     height: "50%",
+  },
+  button: {
+    backgroundColor: theme.colors.button,
+    width: 151,
+    height: 151,
+    borderRadius: 151 / 2,
   },
 });
