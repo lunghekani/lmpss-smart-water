@@ -13,29 +13,11 @@ namespace Smart_Water_Dash.Controllers
         {
             _db = db;
         }
-        //public IActionResult Index()
-        //{
-        //    IEnumerable<DeviceModel> objList = _db.Devices;
-        //    return View();
-        //}
+        public IActionResult Index()
+        {
+            IEnumerable<DeviceModel> objList = _db.Devices;
+            return View();
+        }
     }
 }
 
-//namespace Smart_Water_Dash.Controllers
-//{
-//    public class UserController : Controller
-//    {
-//        private readonly ApplicationDbContext _db;
-
-//        public UserController(ApplicationDbContext db)
-//        {
-//            _db = db;
-//        }
-
-//        public IActionResult Index()
-//        {
-//            IEnumerable<Users> objList = _db.Users;
-//            return View(objList);
-//        }
-//    }
-//}
