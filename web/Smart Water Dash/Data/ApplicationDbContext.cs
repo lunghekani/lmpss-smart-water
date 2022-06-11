@@ -14,6 +14,9 @@ namespace Smart_Water_Dash.Data
 
         }
         public DbSet <Users> Users { get; set; }
-        
+        public DbSet<FgPassword> FgPassowrd { get; set; }
+        public DbSet<Login> Login { get; set; }
+        public DbSet<Signup> Signup { get; set; }
+        public DbSet<DeviceModel> Devices { get; set; }
     }
 }
