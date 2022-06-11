@@ -5,6 +5,17 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import * as theme from "./theme";
 
 export default {
+  water: {
+    name: "Water Meter",
+    icon: ({ size, color, ...props }) => (
+      <MaterialCommunityIcons
+        size={size || theme.sizes.font}
+        color={color || theme.colors.accent}
+        name="water-outline"
+        {...props}
+      />
+    ),
+  },
   light: {
     name: "Light",
     icon: ({ size, color, ...props }) => (

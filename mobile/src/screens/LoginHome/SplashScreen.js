@@ -21,7 +21,7 @@ const SplashScreen =({navigation})=>{
 
                 <TouchableOpacity
         style={styles.loginButton}
-        onPress={() => navigation.navigate("Login")}
+        onPress={() => navigation.navigate("Home")}
       >
         <Text style={styles.btnText}>Get started </Text>
         <MaterialIcons name="navigate-next" 
