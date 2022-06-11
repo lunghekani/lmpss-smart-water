@@ -13,6 +13,8 @@ namespace Smart_Water_Dash.Models
         public string deviceId { get; set; }
         public string userName { get; set; }
         public int userId { get; set; }
+        public string Address { get; set; }   
+        public DateTime Created { get; set; }   
 
     }
 }

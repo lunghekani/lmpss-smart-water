@@ -1,0 +1,91 @@
+﻿@using System.Collections
+@model Smart_Water_Dash.Models.DeviceModel
+
+<form method="post" asp-action="Create">
+    <div class="border p-3">
+
+        <div class="form-group row">
+            <h2 class="text-info p1-3">Add Device</h2>
+        </div>
+
+        <form method="post" asp-action="LoginUser" class="form " id="kt_login_signin_form">
+                        <div class="form-group mb-5">
+                            <input class="form-control h-auto form-control-solid py-3 px-6" type="text" placeholder="Device S/N" name="deviceID" autocomplete="off" />
+                        </div>
+
+                        <div class="form-group mb-5">
+                            <input class="form-control h-auto form-control-solid py-3 px-8" type="text" placeholder="User Name" name="userId" />
+                        </div>
+
+                         <div class="form-group mb-5">
+                            <input class="form-control h-auto form-control-solid py-3 px-8" type="text" placeholder="Address" name="Address" />
+                        </div>
+
+                         <div class="form-group mb-5">
+                            <input class="form-control h-auto form-control-solid py-3 px-8" type="text" placeholder="Date" name="Created" />
+                        </div>
+
+                        <div class="form-group d-flex flex-wrap justify-content-between align-items-center">
+                            
+                            <input @*asp-action="DeviceModel"*@ type="submit"  class="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-2" value="Add Device" />
+                        </div>
+                        
+        </form>
+        @*<div class="row">
+            <div class="col-8">
+                <div class=" form-group row">
+                    <div class="col-4">
+                        <label asp-for="userId"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="userId" class="form-control" />
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="userName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="userName" class="form-control" />
+                    </div>
+                </div>
+                <div class=" form-group row">
+                    <div class="col-4">
+                        <label asp-for="Address"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Address" class="form-control" />
+                    </div>
+
+                </div>
+                <div class=" form-group row">
+                    <div class="col-4">
+                        <label asp-for="Created"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Created" class="form-control" />
+                    </div>
+
+                </div>
+                <
+                </div>
+        *@        <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-100%" value="Add Device"/> 
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success w-100">Back </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                @*Keep this empty*@
+            </div>
+        </div>
+    
+</form>
+
