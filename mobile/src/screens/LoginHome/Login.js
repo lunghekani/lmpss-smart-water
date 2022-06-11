@@ -27,6 +27,7 @@ export default function Login({ navigation }) {
           />
         </TouchableOpacity>
       </View>
+      
       <Text style={styles.loginText}>Login</Text>
       <TextInput style={styles.input} placeholder={"Email"} />
       <View>
@@ -34,6 +35,7 @@ export default function Login({ navigation }) {
         {/* <Ionicons name='eye-off' size={24} color='red'/> */}
       </View>
 
+      
       <Text style={styles.passwordText}>Forgot Password?</Text>
       <TouchableOpacity
         style={styles.loginButton}
@@ -41,6 +43,8 @@ export default function Login({ navigation }) {
       >
         <Text style={styles.btnText}>LOGIN</Text>
       </TouchableOpacity>
+    
+    
     </View>
   );
 }
