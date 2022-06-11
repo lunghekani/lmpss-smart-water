@@ -16,16 +16,26 @@ namespace Smart_Water_Dash.Controllers
         {
             _db = db;
         }
+       
         public IActionResult Signup()
         {
             IEnumerable<Signup> objList = _db.Signup;
             return View(objList);
         }
 
+
+        //Get - signup
+        public IActionResult SignupUser()
+        {
+           
+            return View();
+        }
+
+
         //POST -signup
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Signup(Signup obj)
+        public IActionResult SignupUser(Signup obj)
         {
             _db.Signup.Add(obj);
             _db.SaveChanges();
