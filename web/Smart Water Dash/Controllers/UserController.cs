@@ -25,15 +25,82 @@ namespace Smart_Water_Dash.Controllers
             return View();
         }
 
-
         //POST - CREATE
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Users obj)
         {
-            _db.Users.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _db.Users.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+        }
+
+        //GET - EDIT
+        public IActionResult Edit(int? UserId)
+        {
+            if(UserId == null || UserId == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Users.Find(UserId);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        //POST - EDIT
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Users obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Users.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+        }
+
+        //GET - DELETE
+        public IActionResult Delete(int? UserId)
+        {
+            if (UserId == null || UserId == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Users.Find(UserId);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        //POST - DELETE
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePost(int? UserId)
+        {
+            var obj = _db.Users.Find(UserId);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+            
+                _db.Users.Remove(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            
+            
         }
     }
 }
