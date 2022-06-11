@@ -18,5 +18,22 @@ namespace Smart_Water_Dash.Controllers
             IEnumerable<Users> objList = _db.Users;
             return View (objList);
         }
+
+        //GET - CREATE
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+
+        //POST - CREATE
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Users obj)
+        {
+            _db.Users.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
