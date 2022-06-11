@@ -39,7 +39,7 @@ namespace Smart_Water_Dash.Controllers
         {
             _db.Signup.Add(obj);
             _db.SaveChanges();
-            return RedirectToAction("Login");
+            return RedirectToAction("SignUp");
         }
     }
 }
