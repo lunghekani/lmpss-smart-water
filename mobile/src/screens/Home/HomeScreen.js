@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Divider from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 import { Block, Text } from "../../Components/Index";
@@ -13,6 +13,36 @@ import * as theme from "../../theme";
 import mocks from "../../settings";
 
 export default function HomeScreen({ navigation }) {
+ 
+  const movieURL = "https://localhost:5001/api/genres";
+  const [data, setData] = useState([]);
+  const [title, setTitle] = useState([]);
+
+ useEffect(() => {
+  fetch(movieURL)
+    .then((response) => response.json()) // get response, convert to json
+    .then((json) => {
+      setData(json.id);
+      setTitle(json.name);
+
+    })
+    .catch((error) => alert(error)) // display errors
+    .finally(() => setLoading(false)); // change loading state
+}, []);
+
+async function getMoviesAsync() {
+  try {
+    let response = await fetch(movieURL);
+    let json = await response.json();
+    setData(json.id);
+    setTitle(json.name);
+
+    setLoading(false);
+  } catch (error) {
+    alert(error);
+  }
+}
+
   return (
     <SafeAreaView style={styles.mainContainer}>
       <Block column>
@@ -53,52 +83,17 @@ export default function HomeScreen({ navigation }) {
           </TouchableOpacity>
         </Block>
       </Block>
-      <Block column space="between">
-        <Block row space="around" style={{ marginVertical: theme.sizes.base }}>
-          <TouchableOpacity activeOpacity={0.8}>
-            <Block center middle style={styles.button}>
-              <TouchableOpacity style={styles.circleOpacity}>
-                <Ionicons color={"#219ebc"} name="water-outline" size={30} />
-              </TouchableOpacity>
-              <Text style={styles.btnText}>Water</Text>
-            </Block>
-          </TouchableOpacity>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => navigation.navigate("Settings", { name: "light" })}
-          >
-            <Block center middle style={styles.button}>
-              <TouchableOpacity style={styles.circleOpacity}>
-                <Ionicons color={"#219ebc"} name="water-outline" size={30} />
-              </TouchableOpacity>
-              <Text style={styles.btnText}>Water</Text>
-            </Block>
-          </TouchableOpacity>
-        </Block>
-      </Block>
-      <Block column space="between">
-        <Block row space="around" style={{ marginVertical: theme.sizes.base }}>
-          <TouchableOpacity activeOpacity={0.8}>
-            <Block center middle style={styles.button}>
-              <TouchableOpacity style={styles.circleOpacity}>
-                <Ionicons color={"#219ebc"} name="water-outline" size={30} />
-              </TouchableOpacity>
-              <Text style={styles.btnText}>Water</Text>
-            </Block>
-          </TouchableOpacity>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => navigation.navigate("Settings", { name: "light" })}
-          >
-            <Block center middle style={styles.button}>
-              <TouchableOpacity style={styles.circleOpacity}>
-                <Ionicons color={"#219ebc"} name="water-outline" size={30} />
-              </TouchableOpacity>
-              <Text style={styles.btnText}>Water</Text>
-            </Block>
-          </TouchableOpacity>
-        </Block>
-      </Block>
+      <FlatList
+            data={data}
+            keyExtractor={({ id }, index) => id}
+            renderItem={({ item }) => (
+              <View style={{ paddingBottom: 10 }}>
+                <Text>
+                  {item.id}. {item.title}, {item.releaseYear}
+                </Text>
+              </View>
+            )}
+          />
     </SafeAreaView>
   );
 }
