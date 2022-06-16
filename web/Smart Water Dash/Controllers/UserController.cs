@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Smart_Water_Dash.Data;
 using Smart_Water_Dash.Models;
 
@@ -99,8 +103,6 @@ namespace Smart_Water_Dash.Controllers
                 _db.Users.Remove(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
-            
-            
         }
     }
 }
