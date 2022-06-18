@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "lmpss-smart-water-3",
+    "slug": "lmpss-smart-water-3",
+    "version": "1.0.0",
+    "sdkVersion": "45.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "android": {
+      "package": "com.madibametja.lmpsssmartwater3"
+    }
+  }
+}

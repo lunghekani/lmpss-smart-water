@@ -1,6 +1,7 @@
 import React from 'react';
-import {View , Text, StyleSheet, TouchableOpacity, Dimensions,Image} from 'react-native'
-import LinearGradient from 'react-native-linear-gradient';
+import {View , Text, StyleSheet, TouchableOpacity, Dimensions,Image} from 'react-native';
+import * as Animatable from 'react-native-animatable';
+import {LinearGradient} from 'expo-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
  
 
@@ -8,7 +9,9 @@ const SplashScreen =({navigation})=>{
     return(
         <View style={styles.container}>
             <View style={styles.header}>
-               <Image 
+               <Animatable.Image 
+               animation="bounceIn"
+               duration="1500"
                source={require('./waterLogo.png')}
                style={styles.logo}
                resizeMode="stretch"
@@ -23,14 +26,20 @@ const SplashScreen =({navigation})=>{
         style={styles.loginButton}
         onPress={() => navigation.navigate("Login")}
       >
-        <Text style={styles.btnText}>Get started </Text>
+        <LinearGradient 
+        colors={['#08d4c4','#01ab9d']}
+        style={styles.signIn}>
+              <Text style={styles.btnText}>Get started </Text>
         <MaterialIcons name="navigate-next" 
         color ="white"
-        size = {20} ></MaterialIcons>
+        size = {20} >
+            
+        </MaterialIcons>
+        </LinearGradient>
+      
       </TouchableOpacity>
             </View>
-                {/* <Text style={{color:'white', marginBottom:20}}>Intro Screen</Text>
-                <Button title='Continue' onPress={()=> navigation.navigate('Sign-up')}></Button> */}
+        
         </View>
     )
 }
