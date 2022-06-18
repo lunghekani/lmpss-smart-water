@@ -23,5 +23,9 @@ namespace Smart_Water_Dash.Models
         public string Email { get; set; }
         [Required]
         public string Address { get; set; }
+        [Required]
+        public string Password { get; set; }
+        [Required]
+        public string ConfirmPassword { get; set; }
     }
 }
