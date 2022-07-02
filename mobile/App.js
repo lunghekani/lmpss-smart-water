@@ -4,23 +4,21 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Tabs from "./src/navigation/TabsNavigator";
 
- 
 import LoginScreen from "./src/screens/LoginHome/LoginScreen";
 import Login from "./src/screens/LoginHome/Login";
 import SignupScreen from "./src/screens/LoginHome/SignupScreen";
 import HomeScreen from "./src/screens/Home/HomeScreen";
 import MainStackNavigation from "./src/navigation/MainStackNavigation";
 
-
-const App =()=>{
-  return(
+const App = () => {
+  return (
     <NavigationContainer>
-      <MainStackNavigation/>
+      <MainStackNavigation />
     </NavigationContainer>
-  )
-}
+  );
+};
 
-export default App; 
+export default App;
 // const Stack = createStackNavigator();
 
 // export default function App() {

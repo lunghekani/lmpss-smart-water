@@ -39,7 +39,12 @@
                     <th>
                         Address
                     </th>
-                    <th></th>
+                    <th>
+                        Password
+                    </th>
+                    <th>
+                        Confirm Password
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -51,6 +56,8 @@
                     <td width = "30%">@obj.PhoneNumber</td>
                     <td width = "30%">@obj.Email</td>
                     <td width = "30%">@obj.Address</td>
+                    <td width = "30%">@obj.Password</td>
+                    <td width = "30%">@obj.ConfirmPassword</td>
                     <td class="text-center">
                         <div class="w-75 btn-group" role="group">
                             <a asp-controller= "User" asp-route-UserId="@obj.UserId" asp-action="Edit" class="btn btn-primary mx-2">

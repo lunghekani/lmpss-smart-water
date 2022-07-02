@@ -13,11 +13,35 @@ namespace Smart_Water_Dash.Controllers
         {
             _db = db;
         }
+        
         public IActionResult Index()
         {
             IEnumerable<DeviceModel> objList = _db.Devices;
             return View();
         }
+
+        public IActionResult Device()
+        {
+            IEnumerable<DeviceModel> objList = _db.Devices;
+            return View(objList);
+        }
+        // GET - Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        //Post - Create
+        [HttpPost]
+        public IActionResult Create(DeviceModel device)
+        {
+            _db.Devices.Add(device);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }
 

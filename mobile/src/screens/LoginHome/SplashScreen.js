@@ -24,7 +24,7 @@ const SplashScreen =({navigation})=>{
 
                 <TouchableOpacity
         style={styles.loginButton}
-        onPress={() => navigation.navigate("Login")}
+        onPress={() => navigation.navigate("Home")}
       >
         <LinearGradient 
         colors={['#08d4c4','#01ab9d']}
