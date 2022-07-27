@@ -43,7 +43,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("deviceId");
 
-                    b.ToTable("Devices");
+                    b.ToTable("Devices", (string)null);
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.FgPassword", b =>
@@ -60,7 +60,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FgPassowrd");
+                    b.ToTable("FgPassowrd", (string)null);
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.Login", b =>
@@ -81,98 +81,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Login");
-                });
-
-            modelBuilder.Entity("Smart_Water_Dash.Models.Signup", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("ConfirmPassword")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Signup");
-                });
-
-            modelBuilder.Entity("Smart_Water_Dash.Models.DeviceModel", b =>
-                {
-                    b.Property<string>("deviceId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("userId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("userName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("deviceId");
-
-                    b.ToTable("Devices");
-                });
-
-            modelBuilder.Entity("Smart_Water_Dash.Models.FgPassword", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FgPassowrd");
-                });
-
-            modelBuilder.Entity("Smart_Water_Dash.Models.Login", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Login");
+                    b.ToTable("Login", (string)null);
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.Signup", b =>
@@ -213,7 +122,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Signup");
+                    b.ToTable("Signup", (string)null);
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.Users", b =>
@@ -254,7 +163,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 #pragma warning restore 612, 618
         }

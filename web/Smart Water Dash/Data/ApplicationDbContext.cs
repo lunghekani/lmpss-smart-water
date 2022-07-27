@@ -18,5 +18,7 @@ namespace Smart_Water_Dash.Data
         public DbSet<Login> Login { get; set; }
         public DbSet<Signup> Signup { get; set; }
         public DbSet<DeviceModel> Devices { get; set; }
+        public DbSet<Graphs> Graphs { get; set; }
+
     }
 }

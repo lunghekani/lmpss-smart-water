@@ -1,0 +1,124 @@
+﻿<html>
+    <head>
+        <link rel="canonical" href="https://keenthemes.com/metronic" />
+		<!--begin::Fonts-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<!--end::Fonts-->
+		<!--begin::Global Theme Styles(used by all pages)-->
+		<link href="~/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="~/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="~/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<!--end::Global Theme Styles-->
+		<!--begin::Layout Themes(used by all pages)-->
+		<!--end::Layout Themes-->
+		<link rel="shortcut icon" href="~/media/logos/favicon.ico" />
+
+		<style type="text/css">	
+    	
+                .apexcharts-legend {	
+                display: flex;	
+                overflow: auto;	
+                padding: 0 10px;	
+                }	
+                .apexcharts-legend.position-bottom, .apexcharts-legend.position-top {	
+                flex-wrap: wrap	
+                }	
+                .apexcharts-legend.position-right, .apexcharts-legend.position-left {	
+                flex-direction: column;	
+                bottom: 0;	
+                }	
+                .apexcharts-legend.position-bottom.apexcharts-align-left, .apexcharts-legend.position-top.apexcharts-align-left, .apexcharts-legend.position-right, .apexcharts-legend.position-left {	
+                justify-content: flex-start;	
+                }	
+                .apexcharts-legend.position-bottom.apexcharts-align-center, .apexcharts-legend.position-top.apexcharts-align-center {	
+                justify-content: center;  	
+                }	
+                .apexcharts-legend.position-bottom.apexcharts-align-right, .apexcharts-legend.position-top.apexcharts-align-right {	
+                justify-content: flex-end;	
+                }	
+                .apexcharts-legend-series {	
+                cursor: pointer;	
+                line-height: normal;	
+                }	
+                .apexcharts-legend.position-bottom .apexcharts-legend-series, .apexcharts-legend.position-top .apexcharts-legend-series{	
+                display: flex;	
+                align-items: center;	
+                }	
+                .apexcharts-legend-text {	
+                position: relative;	
+                font-size: 14px;	
+                }	
+                .apexcharts-legend-text *, .apexcharts-legend-marker * {	
+                pointer-events: none;	
+                }	
+                .apexcharts-legend-marker {	
+                position: relative;	
+                display: inline-block;	
+                cursor: pointer;	
+                margin-right: 3px;	
+                border-style: solid;
+                }	
+      	
+                .apexcharts-legend.apexcharts-align-right .apexcharts-legend-series, .apexcharts-legend.apexcharts-align-left .apexcharts-legend-series{	
+                display: inline-block;	
+                }	
+                .apexcharts-legend-series.apexcharts-no-click {	
+                cursor: auto;	
+                }	
+                .apexcharts-legend .apexcharts-hidden-zero-series, .apexcharts-legend .apexcharts-hidden-null-series {	
+                display: none !important;	
+                }	
+                .apexcharts-inactive-legend {	
+                opacity: 0.45;	
+                </style>
+
+
+
+    </head>
+
+    <body>
+
+
+               <div class="row">
+					<div class="col-lg-12">
+						<!--begin::Card-->
+						<div class="card card-custom gutter-b">
+							<div class="card-header">
+								<div class="card-title">
+									<h3 class="card-label">Column Chart</h3>
+								</div>
+							</div>
+							<div class="card-body">
+								<!--begin::Chart-->
+								<div id="chart_3"></div>
+								<!--end::Chart-->
+							</div>
+						</div>
+						<!--end::Card-->
+					</div>
+               </div>
+
+               
+	            
+
+
+
+        <script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
+		<!--begin::Global Config(global config for global JS scripts)-->
+		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#663259", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#F4E1F0", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
+		<!--end::Global Config-->
+		<!--begin::Global Theme Bundle(used by all pages)-->
+		<script src="~/plugins/global/plugins.bundle.js"></script>
+		<script src="~/plugins/custom/prismjs/prismjs.bundle.js"></script>
+		<script src="~/js/scripts.bundle.js"></script>
+		<!--end::Global Theme Bundle-->
+		<!--begin::Page Scripts(used by this page)-->
+		<script src="~/js/pages/features/charts/apexcharts.js"></script>
+		<!--end::Page Scripts-->
+
+
+    </body>
+</html>
+
+
+

@@ -39,5 +39,26 @@ namespace Smart_Water_Dash.Controllers
             return RedirectToAction("Login");
         }
 
+        //Profile forms/pages
+        public IActionResult Profile()
+        {
+            return View();
+        }
+        public IActionResult EditPersonalInfo()
+        {
+            return View();
+        }
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+        public IActionResult CardInfo()
+        {
+            return View();
+        }
+        public IActionResult Statements()
+        {
+            return View();
+        }
     }
 }

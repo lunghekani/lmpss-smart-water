@@ -1,0 +1,213 @@
+﻿<html>
+    <head>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="~/css/font-awesome.min.css" />
+
+
+        <style>
+			@*< beginning of styling for the big cards>*@
+			.card {
+                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                  max-width: 350px;
+                  margin: auto;
+                  text-align: center;
+				  display:inline-grid;
+			}
+
+			.title {
+				color: grey;
+				font-size: 18px;
+			}
+
+			button {
+				border: none;
+				outline: 0;
+				display: inline-block;
+				padding: 8px;
+				color: white;
+				background-color:#1E90FF;
+				text-align: center;
+				cursor: pointer;
+				width: 100%;
+				font-size: 18px;
+			}
+
+			a {
+				text-decoration: none;
+				font-size: 22px;
+				color: black;
+			}
+
+			button:hover, a:hover {
+				opacity: 0.7;
+			}
+			@*<ending of styling for the big cards>*@
+
+			@*< beginning of styling for the top small cards>*@
+
+			*{
+				padding:0;
+				margin:0;
+				box-sizing: border-box;
+				list-style-type:none;
+				text-decoration:none;
+				font-family:'verdana';
+			}
+			main{
+			margin-top:80px;
+			background-color:#ebf6ff;
+			padding:2rem 1.5rem;
+			min-height:calc(100vh);
+			align-items:center;
+
+			}
+		
+			.cards{
+				display:grid;
+				grid-template-columns:repeat(4,1fr);
+				grid-gap:2rem;
+				margin-top:1rem;
+				padding-left:
+			}
+			.card-single{
+				display:flex;
+				background-color:#fff;
+				justify-content:space-between;
+				padding:2rem;
+				border-radius:10px;
+				box-shadow:2px 5px 10px 2px rgb(0 0 0/10%);
+				width:max-content;
+			}
+			.card-single span:first-child{
+				color:#f8e80c;
+			}
+			.card-single span:last-child{
+				font-size:2rem;
+			}
+			.card-single small{
+				color:grey;
+			}
+			.card-single:hover{
+				background-color:#008ea1;
+				color:#fff;
+			}
+       
+			@@media only screen and (max-width:960px){
+				.cards{
+					grid-template-columns:repeat(3, 1fr);
+				}
+				.recent-grid{
+					grid-template-columns: 60% 40%;
+				}
+			}
+			@@media only screen and (max-width:768px){
+				.cards{
+					grid-template-columns:100%;
+				}
+          
+			
+			}
+			@@media only screen and (max-width:560px){
+			.cards{
+				grid-template-columns:100%;
+			}	
+           @*< enfing of styling for the top small cards>*@
+
+		</style>
+   </head>  
+
+    <body>
+
+        <partial name="_SideBar"/>
+
+        @*<beinning of small cards*@
+
+            	<main>
+					@*<div class="cards">
+						<div class="card-single">
+							<div>
+								<h2>1000 L</h2>
+								<small>Past Hour</small>
+							</div>
+							<div>
+								<span class="fa fa-bar-chart"></span>
+							</div>
+						</div>
+
+						<div class="card-single">
+							<div>
+								<h2>10 000 L</h2>
+								<small>Week</small>
+							</div>
+							<div>
+								<span class="fa fa-calendar-o"></span>
+							</div>
+						</div>
+
+						<div class="card-single">
+							<div>
+								<h2>500 000 L</h2>
+								<small>Month</small>
+							</div>
+							<div>
+								<span class="fa fa-calendar"></span>
+							</div>
+						</div>
+
+					</div>*@
+			 <p></p>
+
+			@*<end of small cards*@
+
+
+		   @* <beginning of the cards>*@
+			<div class="row">
+				<div class="card">
+				  <i class="fa fa-clock-o" aria-hidden="true" style="width:100%"></i> 
+				  <h1>Water Consumption</h1>
+				  <p class="title">Past Hour</p>
+             
+				  <p><button><a asp-controller="Graphs" asp-action="BarGraph">See More</a></button></p>
+				</div>
+
+
+				 <div class="card">
+					 <i class="fa fa-calendar-o" aria-hidden="true" style="width:100%"></i>
+					  <h1>Water Consumption</h1>
+					  <p class="title">Today</p>            
+				  <p><button><a asp-controller="Graphs" asp-action="BarGraph">See More</a></button></p>
+				</div>        
+
+			</div>
+
+			<p></p>
+
+				<div class="row">
+				<div class="card">
+				  <i class="fa fa-calendar-check-o" aria-hidden="true" style="width:100%"></i> 
+				  <h1>Water Consumption</h1>
+				  <p class="title">Weekly</p>
+            
+				  <p><button><a asp-controller="Graphs" asp-action="BarGraph">See More</a></button></p>
+				</div>        
+            
+				<div class="card">
+				  <i class="fa fa-calendar" aria-hidden="true" style="width:100%"></i>
+				  <h1>Water Consumption</h1>
+				  <p class="title">Month</p>
+              
+				  <p><button><a asp-controller="Graphs" asp-action="BarGraph">See More</a></button></p>
+				</div>
+
+			</div>
+		  @*  <ending of the cards>*@
+
+	  			</main>
+
+    </body>
+
+</html>
+
+
+

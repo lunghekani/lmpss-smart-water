@@ -1,0 +1,448 @@
+﻿<html>
+<head>
+	<base href="">
+		<meta charset="utf-8">
+		<title>Metronic Live preview | Keenthemes</title>
+		<meta name="description" content="Updates and statistics">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@*		<link rel="canonical" href="https://keenthemes.com/metronic">
+		<!--begin::Fonts-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
+		<!--end::Fonts-->
+		<!--begin::Page Vendors Styles(used by this page)-->
+		<link href="~/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css">
+		<!--end::Page Vendors Styles-->
+		<!--begin::Global Theme Styles(used by all pages)-->
+		<link href="~/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css">
+		<link href="~/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css">
+		<link href="~/css/style.bundle.css" rel="stylesheet" type="text/css">
+		<!--end::Global Theme Styles-->
+		<!--begin::Layout Themes(used by all pages)-->
+		<!--end::Layout Themes-->
+		<link rel="shortcut icon" href="~/media/logos/favicon.ico">*@	
+		<link rel="stylesheet" href="~/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+@*<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 5%; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #1E90FF		; /* dodgerblue	*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #818181;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;  width:5%;
+
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 25px;
+/*  margin-left: 50px;
+*/
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>*@
+	<style>
+		*{
+			padding:0;
+			margin:0;
+			box-sizing: border-box;
+			list-style-type:none;
+			text-decoration:none;
+			font-family:'verdana';
+		}
+		.sidebar{
+			width:20%;
+			position:fixed;
+			left:0;
+			top:0;
+			height:100%;
+			background: #1E90FF	; /* dodgerblue	*/
+			z-index:100;
+			transition:width 300ms;
+		}
+		.sidebar-brand{
+			height:90px;
+			padding:1rem 0rem 1rem 2rem;
+			color:#fff
+		}
+		.sidebar-brand span{
+			display:inline-block;
+			margin-right:1rem;
+		}
+		.sidebar-menu{
+			margin-top:1rem;
+		}
+		.sidebar-menu a{
+			padding-left:1rem;
+			display:block;
+			color:#fff;
+			font-size:1.1rem;
+		}
+		.sidebar-menu li{
+			width:100%;
+			margin-bottom:2rem;
+			padding-left:10%;
+		}
+		.sidebar-menu a span:first-child{
+			padding-left:1rem;
+			font-size:1.5rem;
+		}
+		.content{
+			transition: margin-left 300ms;
+			margin-Left:22%;
+		}
+		header{
+			background:#fff;
+			display:flex;
+			justify-content:space-between;
+			padding:1rem;
+			box-shadow:2px 5px 15px 2px rgb(0 0 0/10%);
+			position:fixed;
+			/*left:22%;*/
+			right:0;
+			width:80%;
+			top:0;
+			z-index:100;
+			transition: left 300ms;
+		}
+		.welcome{
+			font-size:1.5rem;
+			padding-right:1rem;
+			margin-left:15px;
+			color:#008ea1;
+		} 
+		.user-wrapp{
+			display: flex;
+			align-items:center;
+		}
+		/*.user-wrapp img{
+			border-radius:50%;
+			margin-right:5rem;
+		}*/
+		.user-wrapp small{
+			color:#ccc;
+			display:inline-block;
+		}
+		.logo-img{
+			cursor:pointer;
+		}
+		#dropdown{
+			position:relative;
+			display:inline-block;
+		}
+		.dropdown-content{
+			display:none;
+			position:absolute;
+			background-color:#f9f9f9;
+			min-width:160px;
+			height:auto;
+			box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+			padding:5px;
+			z-index:1;
+		}
+		#dropdown:hover .dropdown-content{
+			display:block;
+			cursor:pointer;
+		}
+		.dropdown-content p{
+			padding:.5rem;
+		}
+		/*main{
+			margin-top:80px;
+			background-color:#ebf6ff;
+			padding:2rem 1.5rem;
+			min-height:calc(100vh);
+		}
+		.cards{
+			display:grid;
+			grid-template-columns:repeat(4,1fr);
+			grid-gap:2rem;
+			margin-top:1rem;
+		}
+		.card-single{
+			display:flex;
+			background-color:#fff;
+			justify-content:space-between;
+			padding:2rem;
+			border-radius:10px;
+			box-shadow:2px 5px 10px 2px rgb(0 0 0/10%);
+			width:max-content;
+		}
+		.card-single span:first-child{
+			color:#f8e80c;
+		}
+		.card-single span:last-child{
+			font-size:2rem;
+		}
+		.card-single small{
+			color:grey;
+		}
+		.card-single:hover{
+			background-color:#008ea1;
+			color:#fff;
+		}*/
+		#menu:checked~.sidebar{
+			width:8%;
+		}
+		#menu:checked~.sidebar .sidebar-brand, h2 span:last-child,
+		#menu:checked~.sidebar li a span:last-child{
+			display:none;
+			
+		}
+		#menu:checked~.content{
+			margin-left:60px;
+		}
+		#menu:checked~.content header{
+			width:calc(100%-60px);
+			left:60px;
+		}
+		@@media only screen and (max-width:960px){
+			.cards{
+				grid-template-columns:repeat(3, 1fr);
+			}
+			.recent-grid{
+				grid-template-columns: 60% 40%;
+			}
+		}
+		@@media only screen and (max-width:768px){
+			.cards{
+				grid-template-columns:100%;
+			}
+			.sidebar{
+				left:-100% !important;
+			}
+			header p{
+				display:flex;
+				align-items:center;
+			}
+			header p label{
+				display:flex;
+				padding-right:0rem;
+				margin-right:1rem;
+				height:40px;
+				width:40px;
+				border-radius:50%;
+				color:#fff;
+				align-items: center;
+				justify-content:center !important;
+				background-color: #008ea1;
+			}
+			header p span{
+				text-align:center;
+				padding-right:0rem;
+			}
+			.content{
+				width:100%;
+				margin-left:0rem !important;
+			}
+			header{
+				width:100% !important;
+				left:0 !important;
+			}
+			#menu:checked{
+				opacity:0;
+				position:absolute;
+				left:9999px;
+			}
+			#menu:checked~.sidebar{
+				left:0 !important;
+				z-index:100;
+				width:45%;
+			}
+			#menu:checked~.sidebar li a{
+				padding-left:1rem;
+
+			}
+			#menu:checked~.sidebar .sidebar-brand,
+			#menu:checked~.sidebar li {
+				padding-left:2rem;
+				text-align:left;
+			}
+			#menu:checked~.sidebar .sidebar-brand, h2 span:last-child,
+			#menu:checked~.sidebar li a span:last-child{
+				display:inline;
+			}
+			#menu:checked~.content{
+			margin-left:0rem !important;
+		}
+	}
+	@@media only screen and (max-width:560px){
+		.cards{
+			grid-template-columns:100%;
+		}
+	}
+	@@media only screen and (max-width:1200px){
+	.sidebar{
+		width:60px;
+		}
+		.sidebar ,sidebar-brand,h2 span:last-child,
+		.sidebar li a span:last-child{
+			display:none;
+		}
+		.content{
+			margin-left:60px;
+		}
+		.content header{
+			width:calc(100%-60px);
+			left:60px;
+		}
+	}
+			
+	</style>
+
+</head>
+
+<body>
+	<input type="checkbox" name="" id="menu"> 
+	<div class="sidebar">	
+
+		<div class="side-brand">
+			<h2><span class=" fa fa-user-o" ></span><a asp-area="" asp-controller="Home" asp-action="Index">Smart Meter</a></h2>                   
+
+		</div>
+
+		@*<div class="side-brand" >
+			<h2><span class=" fa fa-user-o" ></span> Smart Meter</h2>
+		</div>*@
+
+		<div class="sidebar-menu">
+			<ul>
+				<li><a href="#"><span class="fa fa-home"></span><span>Dashboard</span></a></li>
+				<li><a href="#"><span class="fa fa-desktop"></span><span>Devices</span></a></li>
+				<li><a  asp-controller="ChatSystem" asp-action="Chat"><span class="fa fa-comment-o"></span><span>Messages</span></a></li>
+				<li><a asp-controller="Login" asp-action="CardInfo"><span class="fa fa-credit-card"></span><span>Account</span></a></li>
+				<li><a href="#"><span class="fa fa-cog"></span><span>Settings</span></a></li>
+
+
+			</ul>
+		</div>
+	</div>
+	<div class="content"> 
+		<header>
+			<p><label for="menu"><span class="fa fa-bars"></span></label><span class="welcome">Welcome</span></p>
+
+			<div id="dropdown"class="user-wrapp">
+				<div>
+					<h4>Thabo</h4>
+					<small>Customer</small>
+				</div>
+					@*insert code for uploading image*@
+					<img src="#" width="30" height="30" class="logo-img" />
+				
+				<div class="dropdown-content">
+					<a asp-controller="Login" asp-action="Profile"><p>Profile</p></a>
+					<p>Log-out</p>
+				</div>
+			</div>
+		</header>
+
+	
+	</div>
+
+
+	
+
+	@*<div id="mySidebar" class="sidebar">	 
+		<button class="openbtn" onclick="openNav()">&#9776</button>
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		  <a href="#">About</a>
+		  <a href="#">Services</a>
+		  <a href="#">Clients</a>
+		  <a href="#">Contact</a>
+	</div>
+
+	<div id="main">
+	  <h2>Collapsed Sidebar</h2>
+	  <p>Content...</p>
+	</div>*@
+
+@*
+<script src="~/plugins/global/plugins.bundle.js"></script>
+<script src="~/plugins/custom/prismjs/prismjs.bundle.js"></script>
+<script src="~/js/scripts.bundle.js"></script>
+
+
+<script src="~/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+<script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM"></script>
+<script src="~/plugins/custom/gmaps/gmaps.js"></script>
+
+<script src="~/js/pages/widgets.js"></script>*@
+@*<script>
+		/* Set the width of the sidebar to 20% and the left margin of the page content to 20% */
+	function openNav() {
+	  document.getElementById("mySidebar").style.width = "20%";
+	  document.getElementById("main").style.marginLeft = "20%";
+	}
+
+	/* Set the width of the sidebar to 5 and the left margin of the page content to 5 */
+	function closeNav() {
+	  document.getElementById("mySidebar").style.width = "5%";
+	  document.getElementById("main").style.marginLeft = "5%";
+	}
+
+</script>
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;">
+	<defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline>
+	<path id="SvgjsPath1004" d="M-1 150L-1 150C-1 150 95.5 150 95.5 150C95.5 150 191 150 191 150C191 150 286.5 150 286.5 150C286.5 150 382 150 382 150C382 150 477.49999999999994 150 477.49999999999994 150C477.49999999999994 150 573 150 573 150C573 150 573 150 573 150 "></path></svg>
+*@
+</body>
+
+</html>
+
