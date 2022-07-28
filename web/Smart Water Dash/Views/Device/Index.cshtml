@@ -6,9 +6,7 @@
     <div class = "row pt-4">
         <h2 class = "text-primary"> Devices </h2>
          <div class = "col-6 text-right">
-             <a asp-controller= "Device" asp-action="Create" class="btn btn-primary">
-             Add Device 
-             </a>
+             <a asp-controller= "Device" asp-action="Create" class="btn btn-primary">Add Device</a>
         </div>
     </div>
     <div class = "col-6">
@@ -38,16 +36,16 @@
         </thead>
            
         
-        @*<tbody>
-            @foreach (var obj in Model)
+        <tbody>
+           @* @foreach (var obj in Model)
             {
             <tr>
                 <td width = "30%">@obj.deviceId</td>
                 <td width = "30%">@obj.userName</td>
                 <td width = "30%">@obj.userId</td>              
             </tr>
-            }
-        </tbody>*@
+            }*@
+        </tbody>
     </table>
     
   

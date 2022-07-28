@@ -33,11 +33,20 @@ namespace Smart_Water_Dash.Controllers
 
         //Post - Create
         [HttpPost]
-        public IActionResult Create(DeviceModel device)
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(DeviceModel obj)
         {
-            _db.Devices.Add(device);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _db.Devices.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+
+            //_db.Devices.Add(device);
+            //_db.SaveChanges();
+            //return RedirectToAction("Index");
         }
 
 
