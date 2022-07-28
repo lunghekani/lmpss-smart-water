@@ -43,7 +43,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("deviceId");
 
-                    b.ToTable("Devices", (string)null);
+                    b.ToTable("Devices");
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.FgPassword", b =>
@@ -60,7 +60,23 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FgPassowrd", (string)null);
+                    b.ToTable("FgPassowrd");
+                });
+
+            modelBuilder.Entity("Smart_Water_Dash.Models.Graphs", b =>
+                {
+                    b.Property<string>("readingId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("day")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("liters")
+                        .HasColumnType("int");
+
+                    b.HasKey("readingId");
+
+                    b.ToTable("Graphs");
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.Login", b =>
@@ -81,7 +97,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Login", (string)null);
+                    b.ToTable("Login");
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.Signup", b =>
@@ -122,7 +138,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Signup", (string)null);
+                    b.ToTable("Signup");
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.Users", b =>
@@ -163,7 +179,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
