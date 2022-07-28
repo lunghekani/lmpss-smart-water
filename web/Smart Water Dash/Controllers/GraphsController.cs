@@ -20,7 +20,7 @@ namespace Smart_Water_Dash.Controllers
             [Route("~/")]
         public IActionResult BarGraph()
         {  
-           ViewBag.graphs = _db.Graphs.ToList();
+           //ViewBag.graphs = _db.Graphs.ToList();
 
             return View();
         }       
