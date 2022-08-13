@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Smart_Water_Dash.Data;
 
@@ -11,9 +12,10 @@ using Smart_Water_Dash.Data;
 namespace Smart_Water_Dash.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220616104949_addUsertoDatabase")]
+    partial class addUsertoDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,7 +45,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("deviceId");
 
-                    b.ToTable("Devices", (string)null);
+                    b.ToTable("Devices");
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.FgPassword", b =>
@@ -60,7 +62,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FgPassowrd", (string)null);
+                    b.ToTable("FgPassowrd");
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.Login", b =>
@@ -81,7 +83,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Login", (string)null);
+                    b.ToTable("Login");
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.Signup", b =>
@@ -122,7 +124,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Signup", (string)null);
+                    b.ToTable("Signup");
                 });
 
             modelBuilder.Entity("Smart_Water_Dash.Models.Users", b =>
@@ -163,7 +165,7 @@ namespace Smart_Water_Dash.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
