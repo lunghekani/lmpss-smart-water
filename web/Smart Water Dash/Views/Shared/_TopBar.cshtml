@@ -1,8 +1,4 @@
-﻿@*@using Microsoft.AspNetCore.Identity
-@inject SignInManager<ApplicationUser> _signInManager
-@inject UserManager<ApplicationUser> _userManager*@
-
-<html>
+﻿<html>
     <head>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -70,25 +66,20 @@
 
     <body>
         <header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 
                <div class="topnav" id="myTopnav">
-                    @* <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                    </a>*@
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a> 
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login">Login</a>
-                      @*  @if (_signInManager.IsSignedIn(User))
-                        {*@
+                          @* <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                          </a>*@
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>                        
                             <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">User</a>                        
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login">Login</a>                        
                             <a class="nav-link text-dark" asp-area="" asp-controller="Device" asp-action="Index">Devices</a>
                 
-                       @* }*@
-                
                 </div>       
-                </nav>
+
         </header>
 
 
