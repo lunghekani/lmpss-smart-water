@@ -109,10 +109,13 @@
 			
 			}
 			@@media only screen and (max-width:560px){
-			.cards{
-				grid-template-columns:100%;
+				.cards{
+					grid-template-columns:100%;
+				}	
 			}	
            @*< ending of styling for the top small cards>*@
+			
+		
 
 		</style>
    </head>  
@@ -123,7 +126,7 @@
 
         @*<beinning of small cards*@
 
-            	<main>
+        <main>
 					@*<div class="cards">
 						<div class="card-single">
 							<div>
@@ -168,7 +171,7 @@
 				  <h1>Water Consumption</h1>
 				  <p class="title">Past Hour</p>
              
-				  <p><button><a asp-controller="Graphs" asp-action="BarGraph">See More</a></button></p>
+				  <p><button><a href="#">See More</a></button></p>
 				</div>
 
 
@@ -176,7 +179,7 @@
 					 <i class="fa fa-calendar-o" aria-hidden="true" style="width:100%"></i>
 					  <h1>Water Consumption</h1>
 					  <p class="title">Today</p>            
-				  <p><button><a asp-controller="Graphs" asp-action="BarGraph">See More</a></button></p>
+				  <p><button><a href="#">See More</a></button></p>
 				</div>        
 
 			</div>
@@ -189,7 +192,7 @@
 				  <h1>Water Consumption</h1>
 				  <p class="title">Weekly</p>
             
-				  <p><button><a asp-controller="Graphs" asp-action="BarGraph">See More</a></button></p>
+				  <p><button><a href="#">See More</a></button></p>
 				</div>        
             
 				<div class="card">
@@ -203,7 +206,7 @@
 			</div>
 		  @*  <ending of the cards>*@
 
-	  			</main>
+	  	</main>
 
     </body>
 
